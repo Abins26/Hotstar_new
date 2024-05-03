@@ -1,13 +1,12 @@
 import React from 'react';
 import VIDEO from '../video/premalu_2.mp4';
-import SportsList from './Sportslist';
-// import MovieList from './MovieList';
-import SetsFinite from './Sliders';
-import SeriesList from './SeriesList2';
-const VideoBackground = () => {
-  return (
-    
-    <div className="relative "  >
+
+
+const DetailView=()=>{
+return (
+
+<div className="relative "  >
+    {/* Change to image url  */}
        <video className="fixed  inset-0 top-0 left-0 z-0 w-full h-screen object-cover" autoPlay loop muted
       src={VIDEO} type="Video/mp4"> </video>
       
@@ -36,18 +35,14 @@ const VideoBackground = () => {
        <span className='text-stone-50 text-center font-black text-lg'>&#8227;</span> Subscribe to watch </button>
        <button className=" text-2xl mt-4  text-white py-2  px-4 ml-4 rounded-md bg-opacity-50 bg-gray-400 hover:bg-opacity-70 text-center"> &#43; </button>
        </div>
-       <SetsFinite/>
 
         </div>  
       </div>
 
-      <SeriesList/>
-      <SportsList/>
-        {/* <MovieList/> */}
 
     </div>
       
   );
 };
 
-export default VideoBackground;
+export default DetailView;

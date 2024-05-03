@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./style/SeriesList.css";
-
+import { Link } from "react-router-dom";
 function SeriesList () {
   const [imageUrls, setImageUrls] = useState([]);
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -49,10 +49,11 @@ function SeriesList () {
             {hoveredIndex === index + scrollPosition && (
               <div className="seriesoverlay">
                 <div style={{ display: "flex" }}>
-                  <button className="seriesbutton">
+                <Link to={"/details"}>  <button className="seriesbutton">
                     <h3 style={{ fontWeight: "bold", fontSize: 8 }}>Watch Now</h3>
                   </button>
                   <button className="small-button">+</button>
+                  </Link>
                 </div>
 
                 <p className="small-text">2024-2h.12m-English-U/A16+</p>

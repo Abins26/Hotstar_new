@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./style/SeriesList.css";
+import "./style/sportslist.css";
 
 function SeriesList () {
   const [imageUrls, setImageUrls] = useState([]);
@@ -37,27 +37,27 @@ function SeriesList () {
 
   return (
     <>
-      <div className="seriescontainer flex flex-row">
-        <button className="left-button  bg-gradient-to-r from-black to-transparent" onClick={handleLeftScroll}>{'<'}</button>
+      <div className="sportscontainer flex flex-row">
+        <button className="sportsleft-button  bg-gradient-to-r from-black to-transparent" onClick={handleLeftScroll}>{'<'}</button>
         {imageUrls.slice(scrollPosition, scrollPosition + 7).map((url, index) => (
           <div
-            key={index + scrollPosition} className="seriescard"
+            key={index + scrollPosition} className="sportscard"
             onMouseEnter={() => setHoveredIndex(index + scrollPosition)}
             onMouseLeave={() => setHoveredIndex(null)} >
-            <img src={url} alt={`Movie Poster ${index}`} className="seriesimg" height="200px" width="150px" />
+            <img src={url} alt={`Movie Poster ${index}`} className="sportsimg" height="200px" width="150px" />
 
             {hoveredIndex === index + scrollPosition && (
-              <div className="seriesoverlay">
+              <div className="sportsoverlay">
                 <div style={{ display: "flex" }}>
-                  <button className="seriesbutton">
+                  <button className="sportsbutton">
                     <h3 style={{ fontWeight: "bold", fontSize: 8 }}>Watch Now</h3>
                   </button>
-                  <button className="small-button">+</button>
+                  <button className="sportssmall-button">+</button>
                 </div>
 
-                <p className="small-text">2024-2h.12m-English-U/A16+</p>
+                <p className="sportssmall-text">2024-2h.12m-English-U/A16+</p>
 
-                <p className="seriestext">
+                <p className="sportstext">
                 The plot revolves around Sachin,
                 a student who works in a food joint in Hyderabad,and Reenu, 
                 an IT employee who recently moved to the city,
@@ -67,7 +67,7 @@ function SeriesList () {
           </div>
         ))}
 
-        <button className="right-button  bg-gradient-to-l from-black to-transparent" onClick={handleRightScroll}>{'>'}</button>
+        <button className="sportsright-button  bg-gradient-to-l from-black to-transparent" onClick={handleRightScroll}>{'>'}</button>
       </div>
     </>
   );

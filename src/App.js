@@ -3,21 +3,19 @@ import Navbar from './components/Navbar';
 import 'tailwindcss/tailwind.css';
 // import VideoBackground from './components/VideoBackground';
 import Home from './components/Home'
-import { Router,Route, Routes } from 'react-router-dom';
-
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import DetailView from "./components/detailspage";
 function App() {
   return (
     <>
       <div className="App " >
+        <BrowserRouter>
         <Routes>
-
-         {/* <Route path='/'  element={}/>  */}
-
-          {/* <VideoBackground/> */}
-
+          {/* <DetailView/> */}
           <Route path='/' element={ <Home/> }/>
+          <Route path='/details'  element={<DetailView/>}/>  
         </Routes>
-
+        </BrowserRouter>
       </div>    
     </>
   );
