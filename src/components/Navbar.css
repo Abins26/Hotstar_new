@@ -1,0 +1,10 @@
+.nav-items:hover p{
+  transition: 3.3 ;
+  opacity:1 ;
+}
+
+.nav-ite{
+  p{
+      font-weight: 500;
+}
+}
