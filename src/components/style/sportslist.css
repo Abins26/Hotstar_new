@@ -1,32 +1,43 @@
 .sportscontainer {
     position: relative;
     display: inline-flex;
-    gap: 20px;
+    gap: 10px;
     margin-left: 30px;
     z-index: 9;
     padding-left: 130px;
     padding-bottom: 100px;
     padding-top: 50px;
+    /* background: #000; */
   }
 
   .sportshead{
-    margin-top: 30px;
+    /* margin-top: 30px; */
+    position: absolute;
+    margin-top: -25px;
+    font-size: large;
+    font-weight: 500;
+    color: aliceblue;
   }
 
   .sportscard {
+
     overflow: hidden;
-    width: 150px;
+    width: 230px;
     height: 200px;
     background-color: black;
+    border-radius: 4px;
     transition: transform 0.5s ease-in-out;
   }
   
   .sportscard:hover {
     transform: scale(1.8);
-    height: 250px;
+    height: 220px;
+    width: 200px;
+
 
     .sportsimg{
       height: 120px;
+      border-radius: 4px;
 
     }
 
@@ -39,6 +50,7 @@
     bottom: 0px;
     height: auto;
     width: auto;
+    justify-content: center;
   }
   
   .sportsbutton {
@@ -96,14 +108,17 @@
   .sportsleft-button {
     left: 0;
     /* background-color: #333; */
-  color: #fff;
-  width: 30px;  
+    color: #fff;
+    width: 30px;  
+    height: 200px;
 
-}
+  }
   
   .sportsright-button {
     right: 100px;
     color: #fff;
-    width: 30px;  
+    z-index: 20px;
+    width: 30px; 
+    height: 200px; 
   }
   

@@ -1,3 +1,5 @@
+import { MdKeyboardArrowRight,MdKeyboardArrowLeft } from "react-icons/md";
+
 import React, { useState, useEffect } from "react";
 import "./style/sportslist.css";
 
@@ -10,6 +12,9 @@ function SeriesList () {
   const getData = async () => {
     try {
       const resp = await fetch("https://api.sampleapis.com/movies/family");
+
+      // const resp = await fetch("https://api.sampleapis.com/cartoons/cartoons2D");
+
       const movies = await resp.json();
 
       // Extract image urls
@@ -26,25 +31,30 @@ function SeriesList () {
   }, [getData]);
 
   const handleLeftScroll = () => {
-    setScrollPosition((prevPosition) => Math.max(0, prevPosition - 6));
+    setScrollPosition((prevPosition) => Math.max(0, prevPosition - 5));
   };
 
   const handleRightScroll = () => {
     setScrollPosition((prevPosition) =>
-      Math.min(prevPosition + 6, imageUrls.length - 6)
+      Math.min(prevPosition + 5, imageUrls.length - 5)
     );
   };
 
   return (
     <>
-      <div className="sportscontainer flex flex-row">
-        <button className="sportsleft-button  bg-gradient-to-r from-black to-transparent" onClick={handleLeftScroll}>{'<'}</button>
-        {imageUrls.slice(scrollPosition, scrollPosition + 7).map((url, index) => (
+      <div className="sportscontainer flex flex-row ">
+      <h1 className="sportshead">Animation Movies</h1>
+
+      {/* left arrow */}
+        <button className="sportsleft-button   z-20" onClick={handleLeftScroll}>
+          <MdKeyboardArrowLeft style = {{ fontSize:"30px"}}/></button>
+
+          {imageUrls.slice(scrollPosition, scrollPosition + 5).map((url, index) => (
           <div
             key={index + scrollPosition} className="sportscard"
             onMouseEnter={() => setHoveredIndex(index + scrollPosition)}
             onMouseLeave={() => setHoveredIndex(null)} >
-            <img src={url} alt={`Movie Poster ${index}`} className="sportsimg" height="200px" width="150px" />
+            <img src={url} alt={`Movie Poster ${index}`} className="sportsimg" height="200px" width="230px" />
 
             {hoveredIndex === index + scrollPosition && (
               <div className="sportsoverlay">
@@ -66,8 +76,9 @@ function SeriesList () {
             )}
           </div>
         ))}
-
-        <button className="sportsright-button  bg-gradient-to-l from-black to-transparent" onClick={handleRightScroll}>{'>'}</button>
+          {/* right arrow */}
+        <button className="sportsright-button   z-20" onClick={handleRightScroll}>    {/* bg-gradient-to-l from-black to-transparent */}
+          <MdKeyboardArrowRight style={{fontSize:"30px"}}/></button>
       </div>
     </>
   );

@@ -1,15 +1,19 @@
 import React from 'react';
 import VIDEO from '../video/premalu_2.mp4';
+import Navbar from './Navbar';
 
 
 const DetailView=()=>{
 return (
 
-<div className="relative "  >
+<div className="relative  bg-black h-full"  >
+  <Navbar/>
     {/* Change to image url  */}
-       <video className="fixed  inset-0 top-0 left-0 z-0 w-full h-screen object-cover" autoPlay loop muted
+       <video className="fixed   top-0 left-0 z-0 w-full h-screen object-cover"  loop muted
       src={VIDEO} type="Video/mp4"> </video>
       
+
+
       
       <div className='container relative bg-gradient-to-l z-10 x-10 pt-48 pl-40 pr-102'>
         {/* Add Image */}

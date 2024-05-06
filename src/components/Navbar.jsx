@@ -1,3 +1,4 @@
+import { MdKeyboardArrowRight } from "react-icons/md";
 import React from 'react'
 import user from '../images/user.svg'
 import search from '../images/search.svg'
@@ -6,20 +7,24 @@ import tv from '../images/tv.svg'
 import movie from '../images/movie.svg'
 import sports from '../images/sports.svg'
 import category from '../images/category.svg'
-import './Navbar.css'
+import './style/Navbar.css';
+import { Link } from 'react-router-dom';
 
-const Navbar = () =>{
+const Navbar = () => {
   return (
 
     <div className='bg-transparent h-screen w-38 z-30 pt-4 bg-gradient-to-r from-black to-transparent fixed'>
       <div className='img my-8 mx-6 flex  flex-col gap-2'>
         <img src="https://img.hotstar.com/image/upload/v1656431456/web-images/logo-d-plus.svg" />
 
-        <div><button type="button" className='text-orange-300 bg-gray-500 bg-opacity-30 w-18 py-1 px-2 rounded-full font-normal text-xs '>Subscribe {"＞"}</button>
+        <div className="flex items-center">
+          <button type="button" className='text-orange-300 bg-gray-500 bg-opacity-30 w-18 py-1 px-2 flex rounded-full font-normal text-xs '>
+            Subscribe<MdKeyboardArrowRight style={{ fontSize: "16px" }} />
+          </button>
         </div>
       </div>
      
-
+     
       <div className='nav-items  pb-18  bold flex flex-col justify-center  items-center gap-10  '>
         {/* User */}
         <div className='nav-ite text-white flex  relative   hover:fill-white hover:scale-110 '>
@@ -34,10 +39,12 @@ const Navbar = () =>{
         </div>
 
         {/* Home */}
-        <div className='nav-ite text-white flex relative  hover:fill-white  hover:scale-110 '>
-          <img src={home}  alt="Home Icon" />
-          <p className='absolute opacity-0  left-11'>Home</p>
-        </div>
+        <Link to={"/"}>
+          <div className='nav-ite text-white flex relative  hover:fill-white  hover:scale-110 '>
+            <img src={home} alt="Home Icon" />
+            <p className='absolute opacity-0  left-11'>Home</p>
+          </div>
+        </Link>
  
         {/* TV */}
         <div className='nav-ite text-white flex relative  hover:fill-white hover:scale-110 '>

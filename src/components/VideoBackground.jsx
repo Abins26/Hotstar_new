@@ -1,18 +1,33 @@
-import React from 'react';
+import { PiSpeakerSlashThin,PiSpeakerHighThin } from "react-icons/pi";
+import { FaPlay } from "react-icons/fa6";
+// import {Link} from "react-router-dom";
+
+import React,{useState} from 'react';
 import VIDEO from '../video/premalu_2.mp4';
+
 import SportsList from './Sportslist';
-// import MovieList from './MovieList';
-import SetsFinite from './Sliders';
 import SeriesList from './SeriesList2';
+import SetsFinite from './Sliders';
+// import MovieList from './MovieList';
+
 const VideoBackground = () => {
+
+  // State to track mute/unmute
+  const [muted, setMuted] = useState(true); 
+  const toggleMute = () => {
+    setMuted(!muted);
+  };
+
   return (
     
-    <div className="relative "  >
-       <video className="fixed  inset-0 top-0 left-0 z-0 w-full h-screen object-cover" autoPlay loop muted
+    <div className="relative  "  >
+      {/* <Link to={ "details"}> */}
+
+       <video className="fixed  inset-0 top-0 left-0 z-0 w-full h-screen object-cover" autoPlay loop muted={muted} 
       src={VIDEO} type="Video/mp4"> </video>
       
       
-      <div className='container relative bg-gradient-to-l z-10 x-10 pt-48 pl-40 pr-102'>
+      <div className='container relative  z- x-10 pt-48 pl-40 pr-102  bg-gradient-to-t from-black to-transparent '>
         {/* Add Image */}
         <img src="https://img10.hotstar.com/image/upload/f_auto,h_148/sources/r1/cms/prod/8256/1712839838256-t" alt="Overlay Image" className="mt-4 mr-24" />
         <img src="https://img10.hotstar.com/image/upload/f_auto,h_48/discovery/PP/usp_callouts/newly-added/web/eng/version-1/newlyadded_web_eng.png" alt="" className='w-28'/>
@@ -28,22 +43,37 @@ const VideoBackground = () => {
         and Reenu, an IT employee who recently moved to the city, 
         as they fall in love and face various challenges in their relationship.</p>
        <div className='text-white font-medium' > Romance <span className='text-gray-400 '>|</span> Comedy <span className='text-gray-400 '>|</span> Bromance <span className='text-gray-400 '>|</span> Love Triangle
+      {muted ? (
+        // Mute icon
+        <PiSpeakerSlashThin onClick={toggleMute} 
+        className="absolute  right-10 text-white z-10 cursor-pointer" style={{ fontSize: '22px' }} /> 
+      ) : (
+        // Unmute icon
+        <PiSpeakerHighThin onClick={toggleMute} 
+        className="absolute  right-10 text-white z-10 cursor-pointer" style={{ fontSize: '22px' }} />
+      )}
        </div>
 
        <div className=' w-auto flex justify-between bg-opacity-30'>
         <div>
-       <button className=" text-white text-center font-bold mt-1 h-12 w-60 py-2 px-4   rounded-md bg-opacity-30 bg-gray-100 hover:bg-opacity-50"> 
-       <span className='text-stone-50 text-center font-black text-lg'>&#8227;</span> Subscribe to watch </button>
+       <button className=" text-white text-center justify-center font-bold mt-1 h-12 w-60 py-2 px-4   rounded-md bg-opacity-30 bg-gray-100 hover:bg-opacity-50"> 
+       <span className='text-stone-50 text-center font-black text-xl'  >&#8227; </span>
+       {/* <FaPlay/> */}
+         Subscribe to watch </button>
        <button className=" text-2xl mt-4  text-white py-2  px-4 ml-4 rounded-md bg-opacity-50 bg-gray-400 hover:bg-opacity-70 text-center"> &#43; </button>
        </div>
        <SetsFinite/>
+       
 
         </div>  
       </div>
+      {/* </Link> */}
+      
+      {/* <SeriesList/> */}
+      {/* <SportsList/> */}
 
-      <SeriesList/>
-      <SportsList/>
-        {/* <MovieList/> */}
+
+      {/* <MovieList/> */}
 
     </div>
       
