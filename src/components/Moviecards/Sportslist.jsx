@@ -1,7 +1,7 @@
 import { MdKeyboardArrowRight,MdKeyboardArrowLeft } from "react-icons/md";
 
 import React, { useState, useEffect } from "react";
-import "./style/sportslist.css";
+import "../style/sportslist.css";
 
 function SeriesList () {
   const [imageUrls, setImageUrls] = useState([]);

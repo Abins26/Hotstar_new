@@ -2,7 +2,7 @@
     position: relative;
     display: inline-flex;
     gap: 10px;
-    margin-left: 30px;
+    margin-left: 28px;
     z-index: 9;
     padding-left: 130px;
     padding-bottom: 100px;
@@ -16,7 +16,7 @@
     margin-top: -25px;
     font-size: large;
     font-weight: 500;
-    /* margin-top: 70px; */
+    /* margin-bottom: 70px; */
   }
 
   .seriescard {
@@ -27,17 +27,17 @@
     border-radius: 4px;
     transition: transform 0.5s ease-in-out;
   }
-  
-  .seriescard:hover {
+.seriescard:hover {
     transform: scale(1.8);
     height: 250px;
-    .seriesimg{
+    .seriesimg {
       height: 120px;
       border-radius: 4px;
-
     }
-
   }
+    
+    
+  
   
   .seriesoverlay {
     margin-left: 7px;
@@ -89,7 +89,7 @@
     color: #fff;
   }
   
-  .scroll-button {
+  /* .scroll-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -98,23 +98,26 @@
     cursor: pointer;
     font-size: 20px;
     color: black;
-  }
+  } */
   
   .left-button {
     /* left: 0; */
+    position: absolute;
+    background: transparent;
     color: #fff;
     height: 200px;
     width: 30px;
+    z-index: 40;
   }
   
   .right-button {
-  /* background-color: aqua; */
-  /* right: 100px; */
-  /* left: -80px; */
+  background: transparent;
   color: #fff;
   width: 30px;  
   z-index: 34;
   height: 200px;
+  /* right: 100px; */
+  /* left: -80px; */
   /* top: 136px; */
   }
   

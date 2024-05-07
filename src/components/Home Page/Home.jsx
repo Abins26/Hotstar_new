@@ -1,9 +1,10 @@
 import React from "react";
-import VideoBackground from "../VideoBackground";
-import SeriesList from "../SeriesList2";
-import SportsList from "../Sportslist";
+import VideoBackground from "../Background/VideoBackground";
+import SeriesList from "../Moviecards/SeriesList2";
+import SportsList from "../Moviecards/Sportslist";
 import Navbar from "../Navbar";
 import Footer from "../Footer/footer";
+import Languages from "../MovieCategories/Languages";
 
 const Home = () => {
   return(
@@ -11,11 +12,14 @@ const Home = () => {
       <div>
         <Navbar />
         <VideoBackground />
-<div className="relative h-full w-full bg-black" >
+        <div className="relative h-full w-fit bg-black" 
+         >
+           {/* style={{backgroundColor:"#050714"}} */}
 
         <SeriesList />
 
         <SportsList />
+        <Languages/>
         <Footer />
 </div>
       </div>

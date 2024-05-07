@@ -1,6 +1,6 @@
 import { MdKeyboardArrowRight,MdKeyboardArrowLeft } from "react-icons/md";
 import React, { useState, useEffect } from "react";
-import "./style/SeriesList.css";
+import "../style/SeriesList.css";
 import { Link } from "react-router-dom";
 
 
@@ -42,7 +42,7 @@ function SeriesList () {
       <div className="seriescontainer flex flex-row ">
         <h1 className="Serieshead">Latest Release</h1>
         <button className="left-button  " onClick={handleLeftScroll}><MdKeyboardArrowLeft style = {{ fontSize:"30px"}}/></button>
-        {imageUrls.slice(scrollPosition, scrollPosition + 8).map((url, index) => (
+        {imageUrls.slice(scrollPosition, scrollPosition + 9).map((url, index) => (
           <div
             key={index + scrollPosition} className="seriescard"
             onMouseEnter={() => setHoveredIndex(index + scrollPosition)}

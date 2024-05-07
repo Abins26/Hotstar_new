@@ -5,7 +5,7 @@ import search from '../images/search.svg'
 import home from '../images/home.svg'
 import tv from '../images/tv.svg'
 import movie from '../images/movie.svg'
-import sports from '../images/sports.svg'
+import sports from '../images/sports.svg';
 import category from '../images/category.svg'
 import './style/Navbar.css';
 import { Link } from 'react-router-dom';

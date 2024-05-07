@@ -1,0 +1,15 @@
+.footerdiv{
+    height: 150px;
+    /* background-color: aqua; */
+}
+
+
+/* .footerdiv ul{
+
+color: aqua;
+} */
+
+.footerdiv li{
+    color: aliceblue;
+    opacity: 60%;
+}

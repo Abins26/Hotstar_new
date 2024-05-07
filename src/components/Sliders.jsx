@@ -19,7 +19,7 @@ function SetsFinite() {
       function CustomPrevArrow(props) {
         const { onClick } = props;
         return (
-          <div className={`text-white absolute mt-5  z-10 ${currentSlide===0 ?'hidden':''}`}style={{ left: "" }} onClick={onClick}>
+          <div className={`text-white absolute mt-5  z-10 ${currentSlide===0 ?'hidden':''}`}style={{ left: "-6px" }} onClick={onClick}>
             <MdKeyboardArrowLeft style={{ fontSize: "35px" }} />
           </div>
         );
@@ -27,8 +27,9 @@ function SetsFinite() {
 
   function CustomNextArrow(props) {
     const { onClick } = props;
+    const totalSlides=6;
     return (
-      <div className="text-white absolute bottom-8 z-10" style={{ right: "0" }} onClick={onClick}>
+      <div className={`text-white absolute bottom-8 z- ${currentSlide === totalSlides - 3 ? 'hidden' : ''}`} style={{ right: "0" }}  onClick={onClick}>
         <MdKeyboardArrowRight style={{ fontSize: "35px" }} />
       </div>
     );
@@ -41,38 +42,39 @@ function SetsFinite() {
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 2,
-      initialSlide: 1,
+      initialSlide: 0,
       prevArrow: <CustomPrevArrow />,
       nextArrow: <CustomNextArrow />,
-      // responsive: [
-      //   {
-      //     breakpoint: 1024,
-      //     settings: {
-      //       slidesToShow: 3,
-      //       slidesToScroll: 3,
-      //       infinite: true,
-      //       dots: false
-      //     }
-      //   },
-      //   {
-      //     breakpoint: 600,
-      //     settings: {
-      //       slidesToShow: 2,
-      //       slidesToScroll: 2,
-      //       initialSlide: 2
-      //     }
-      //   },
-      //   {
-      //     breakpoint: 480,
-      //     settings: {
-      //       slidesToShow: 1,
-      //       slidesToScroll: 1
-      //     }
-      //   }
-      // ]
+      afterChange: (index) => setCurrentSlide(index),
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
     };
   return (
-    <div className="slider-container flex flex-col relative pr-6 z-10 rounded-md  gap-2 w-96 mt-8">
+    <div className=" flex flex-col relative h- pr-2 z-1 rounded-md  px-1 w-96 mt-8">
       <Slider {...settings}>
        <div >
        <img src={movieimage} className="h-20 w-28 hover:scale-110 transition opacity-50 hover:opacity-100  duration-300 " />
@@ -97,5 +99,6 @@ function SetsFinite() {
     </div>
   );
 }
+
 
 export default SetsFinite;

@@ -1,13 +1,14 @@
 import { PiSpeakerSlashThin,PiSpeakerHighThin } from "react-icons/pi";
-import { FaPlay } from "react-icons/fa6";
+// import { FaPlay } from "react-icons/fa6";
 // import {Link} from "react-router-dom";
 
 import React,{useState} from 'react';
-import VIDEO from '../video/premalu_2.mp4';
+import VIDEO from '../../video/premalu_2.mp4';
 
-import SportsList from './Sportslist';
-import SeriesList from './SeriesList2';
-import SetsFinite from './Sliders';
+import SportsList from '../Moviecards/Sportslist';
+import SeriesList from '../Moviecards/SeriesList2';
+import SetsFinite from '../Sliders';
+
 // import MovieList from './MovieList';
 
 const VideoBackground = () => {
@@ -27,7 +28,7 @@ const VideoBackground = () => {
       src={VIDEO} type="Video/mp4"> </video>
       
       
-      <div className='container relative  z- x-10 pt-48 pl-40 pr-102  bg-gradient-to-t from-black to-transparent '>
+      <div className='container relative  z- x-10 pt-48 pl-40 pr-102 w-screen bg-gradient-to-t from-black to-transparent '>
         {/* Add Image */}
         <img src="https://img10.hotstar.com/image/upload/f_auto,h_148/sources/r1/cms/prod/8256/1712839838256-t" alt="Overlay Image" className="mt-4 mr-24" />
         <img src="https://img10.hotstar.com/image/upload/f_auto,h_48/discovery/PP/usp_callouts/newly-added/web/eng/version-1/newlyadded_web_eng.png" alt="" className='w-28'/>
@@ -42,16 +43,17 @@ const VideoBackground = () => {
         The plot revolves around Sachin, a student who works in a food joint in Hyderabad,
         and Reenu, an IT employee who recently moved to the city, 
         as they fall in love and face various challenges in their relationship.</p>
-       <div className='text-white font-medium' > Romance <span className='text-gray-400 '>|</span> Comedy <span className='text-gray-400 '>|</span> Bromance <span className='text-gray-400 '>|</span> Love Triangle
+
       {muted ? (
         // Mute icon
         <PiSpeakerSlashThin onClick={toggleMute} 
-        className="absolute  right-10 text-white z-10 cursor-pointer" style={{ fontSize: '22px' }} /> 
+        className="absolute  right-10  text-white z-10 cursor-pointer" style={{ fontSize: '22px' }} /> 
       ) : (
         // Unmute icon
         <PiSpeakerHighThin onClick={toggleMute} 
         className="absolute  right-10 text-white z-10 cursor-pointer" style={{ fontSize: '22px' }} />
       )}
+       <div className='text-white font-medium' > Romance <span className='text-gray-400 '>|</span> Comedy <span className='text-gray-400 '>|</span> Bromance <span className='text-gray-400 '>|</span> Love Triangle
        </div>
 
        <div className=' w-auto flex justify-between bg-opacity-30'>
@@ -62,9 +64,9 @@ const VideoBackground = () => {
          Subscribe to watch </button>
        <button className=" text-2xl mt-4  text-white py-2  px-4 ml-4 rounded-md bg-opacity-50 bg-gray-400 hover:bg-opacity-70 text-center"> &#43; </button>
        </div>
-       <SetsFinite/>
        
 
+       <SetsFinite/>
         </div>  
       </div>
       {/* </Link> */}
