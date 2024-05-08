@@ -1,6 +1,6 @@
 .sportscontainer {
     position: relative;
-    display: inline-flex;
+    display: flex;
     gap: 10px;
     margin-left: 30px;
     z-index: 9;

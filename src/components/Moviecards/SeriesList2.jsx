@@ -50,7 +50,7 @@ function SeriesList () {
             <img src={url} alt={`Movie Poster ${index}`} className="seriesimg" height="200px" width="150px" />
 
             {hoveredIndex === index + scrollPosition && (
-              <Link to={"/details"}>
+              <Link to={`/details/${index+1}`}>
               <div className="seriesoverlay">
                 <div style={{ display: "flex" }}>
                     <button className="seriesbutton">
