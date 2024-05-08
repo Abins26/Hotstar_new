@@ -77,22 +77,22 @@ function SetsFinite() {
     <div className=" flex flex-col relative h- pr-2 z-1 rounded-md  px-1 w-96 mt-8">
       <Slider {...settings}>
        <div >
-       <img src={movieimage} className="h-20 w-28 hover:scale-110 transition opacity-50 hover:opacity-100  duration-300 " />
+       <img src={movieimage} className="h-20 w-28 hover:scale-110 transition opacity-50 hover:opacity-100  duration-300 " alt="" />
        </div>
        <div >
-       <img src={movieimage2} className="h-20 w-28 hover:scale-110 transition opacity-50 hover:opacity-100 duration-300 " />
+       <img src={movieimage2} className="h-20 w-28 hover:scale-110 transition opacity-50 hover:opacity-100 duration-300 " alt="" />
        </div>
        <div>
-       <img src={movieimage3} className="h-20 w-28 hover:scale-110 transition opacity-50 hover:opacity-100 duration-300 " />
+       <img src={movieimage3} className="h-20 w-28 hover:scale-110 transition opacity-50 hover:opacity-100 duration-300 " alt="" />
        </div>
        <div>
-       <img src={movieimage4} className="h-20 w-28 hover:scale-110 transition opacity-50 hover:opacity-100 duration-300 " />
+       <img src={movieimage4} className="h-20 w-28 hover:scale-110 transition opacity-50 hover:opacity-100 duration-300 " alt="" />
        </div>
        <div>
-       <img src={movieimage5} className="h-20 w-28 hover:scale-110 transition opacity-50 hover:opacity-100 duration-300 " />
+       <img src={movieimage5} className="h-20 w-28 hover:scale-110 transition opacity-50 hover:opacity-100 duration-300 " alt="" />
        </div>
        <div>
-       <img src={movieimage6} className="h-20 w-28 hover:scale-110 transition opacity-50 hover:opacity-100 duration-300 " />
+       <img src={movieimage6} className="h-20 w-28 hover:scale-110 transition opacity-50 hover:opacity-100 duration-300 " alt="" />
        </div>
 
       </Slider>
