@@ -2,7 +2,7 @@ import React from "react";
 import VideoBackground from "../Background/VideoBackground";
 import SeriesList from "../Moviecards/SeriesList2";
 import SportsList from "../Moviecards/Sportslist";
-import Navbar from "../Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../Footer/footer";
 import Languages from "../MovieCategories/Languages";
 

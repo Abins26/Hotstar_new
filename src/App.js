@@ -1,5 +1,5 @@
 import './App.css';
-import Navbar from './components/Navbar';
+// import Navbar from '../src/components/Navbar/Navbar';
 import 'tailwindcss/tailwind.css';
 // import VideoBackground from './components/VideoBackground';
 import Home from './components/Home Page/Home'

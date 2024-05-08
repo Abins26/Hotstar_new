@@ -93,21 +93,12 @@
     text-align: justify;
     color: #fff;
   }
-  
-  .sportsscroll-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    color: black;
-  }
-  
+ 
   .sportsleft-button {
-    left: 0;
+    /* left: 0; */
     /* background-color: #333; */
+    position: absolute;
+
     color: #fff;
     width: 30px;  
     height: 200px;
@@ -115,10 +106,13 @@
   }
   
   .sportsright-button {
-    right: 100px;
+    position: absolute;
+    right: 78px;
     color: #fff;
-    z-index: 20px;
-    width: 30px; 
+    z-index: 20;
+    width: 60px; 
     height: 200px; 
+    /* background-color: aqua; */
+
   }
   

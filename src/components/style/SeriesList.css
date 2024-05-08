@@ -5,7 +5,7 @@
     margin-left: 28px;
     z-index: 9;
     padding-left: 130px;
-    padding-bottom: 100px;
+    padding-bottom: 40px;
     padding-top: 30px;
     /* background-color: rgba(9, 10, 26, 0); */
   }
@@ -27,7 +27,7 @@
     border-radius: 4px;
     transition: transform 0.5s ease-in-out;
   }
-.seriescard:hover {
+  .seriescard:hover {
     transform: scale(1.8);
     height: 250px;
     .seriesimg {
@@ -111,13 +111,15 @@
   }
   
   .right-button {
-  background: transparent;
+  /* background: transparent; */
+  /* background-color: aqua; */
+  position: absolute;
   color: #fff;
-  width: 30px;  
+  width: 60px;  
   z-index: 34;
   height: 200px;
-  /* right: 100px; */
-  /* left: -80px; */
+  right: 78px;
+  /* left: -180px; */
   /* top: 136px; */
   }
   

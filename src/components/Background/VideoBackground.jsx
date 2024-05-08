@@ -5,8 +5,8 @@ import { PiSpeakerSlashThin,PiSpeakerHighThin } from "react-icons/pi";
 import React,{useState} from 'react';
 import VIDEO from '../../video/premalu_2.mp4';
 
-import SportsList from '../Moviecards/Sportslist';
-import SeriesList from '../Moviecards/SeriesList2';
+// import SportsList from '../Moviecards/Sportslist';
+// import SeriesList from '../Moviecards/SeriesList2';
 import SetsFinite from '../Sliders';
 
 // import MovieList from './MovieList';
@@ -30,7 +30,7 @@ const VideoBackground = () => {
       
       <div className='container relative  z- x-10 pt-48 pl-40 pr-102 w-screen bg-gradient-to-t from-black to-transparent '>
         {/* Add Image */}
-        <img src="https://img10.hotstar.com/image/upload/f_auto,h_148/sources/r1/cms/prod/8256/1712839838256-t" alt="Overlay Image" className="mt-4 mr-24" />
+        <img src="https://img10.hotstar.com/image/upload/f_auto,h_148/sources/r1/cms/prod/8256/1712839838256-t" alt="OverlayImage" className="mt-4 mr-24" />
         <img src="https://img10.hotstar.com/image/upload/f_auto,h_48/discovery/PP/usp_callouts/newly-added/web/eng/version-1/newlyadded_web_eng.png" alt="" className='w-28'/>
 
         <div className="text-white font-medium text-lg pt-2">
@@ -47,11 +47,11 @@ const VideoBackground = () => {
       {muted ? (
         // Mute icon
         <PiSpeakerSlashThin onClick={toggleMute} 
-        className="absolute  right-10  text-white z-10 cursor-pointer" style={{ fontSize: '22px' }} /> 
+        className="absolute  right-10  text-white z-10 cursor-pointer" style={{ fontSize: '24px' }} /> 
       ) : (
         // Unmute icon
         <PiSpeakerHighThin onClick={toggleMute} 
-        className="absolute  right-10 text-white z-10 cursor-pointer" style={{ fontSize: '22px' }} />
+        className="absolute  right-10 text-white z-10 cursor-pointer" style={{ fontSize: '24px' }} />
       )}
        <div className='text-white font-medium' > Romance <span className='text-gray-400 '>|</span> Comedy <span className='text-gray-400 '>|</span> Bromance <span className='text-gray-400 '>|</span> Love Triangle
        </div>

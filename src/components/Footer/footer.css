@@ -4,10 +4,11 @@
 }
 
 
-/* .footerdiv ul{
+.footerdiv h3{
 
-color: aqua;
-} */
+color: aliceblue;
+opacity: 60% ;
+}
 
 .footerdiv li{
     color: aliceblue;

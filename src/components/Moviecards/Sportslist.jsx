@@ -28,7 +28,7 @@ function SeriesList () {
 
   useEffect(() => {
     getData();
-  }, [getData]);
+  }, []);
 
   const handleLeftScroll = () => {
     setScrollPosition((prevPosition) => Math.max(0, prevPosition - 5));
@@ -46,10 +46,10 @@ function SeriesList () {
       <h1 className="sportshead">Animation Movies</h1>
 
       {/* left arrow */}
-        <button className="sportsleft-button   z-20" onClick={handleLeftScroll}>
+        <button className="sportsleft-button   z-10" onClick={handleLeftScroll}>
           <MdKeyboardArrowLeft style = {{ fontSize:"30px"}}/></button>
 
-          {imageUrls.slice(scrollPosition, scrollPosition + 5).map((url, index) => (
+          {imageUrls.slice(scrollPosition, scrollPosition + 6).map((url, index) => (
           <div
             key={index + scrollPosition} className="sportscard"
             onMouseEnter={() => setHoveredIndex(index + scrollPosition)}
@@ -71,7 +71,7 @@ function SeriesList () {
                 The plot revolves around Sachin,
                 a student who works in a food joint in Hyderabad,and Reenu, 
                 an IT employee who recently moved to the city,
-                as they fall in love and face various challenges in their relationship. </p>
+                as they fall in love and face various challenges in their relationship.</p>
               </div>
             )}
           </div>
