@@ -25,7 +25,7 @@ function SeriesList () {
 
   useEffect(() => {
     getData();
-  }, [getData]);
+  }, []);
 
   const handleLeftScroll = () => {
     setScrollPosition((prevPosition) => Math.max(0, prevPosition - 7));
@@ -41,7 +41,7 @@ function SeriesList () {
     <>
       <div className="seriescontainer flex flex-row ">
         <h1 className="Serieshead">Latest Release</h1>
-        <button className="left-button  " onClick={handleLeftScroll}><MdKeyboardArrowLeft style = {{ fontSize:"30px"}}/></button>
+        <button className="left-button" onClick={handleLeftScroll}> <MdKeyboardArrowLeft style = {{ fontSize:"30px"}}/></button>
         {imageUrls.slice(scrollPosition, scrollPosition + 9).map((url, index) => (
           <div
             key={index + scrollPosition} className="seriescard"
