@@ -45,17 +45,25 @@ function DetailView() {
        {/* <video className="fixed   top-0 left-0 z-0 w-full h-screen object-cover"  loop muted
       src={VIDEO} type="Video/mp4"> </video> */}
 
-    <div className=" w-full h   absolute ">
+    <div className=" absolute ">
     {movies && 
-    <img src={movies.posterURL} alt={movies.title} className="object-contain " height="" width="100%" />}
-  {/* <img src="https://fictionhorizon.com/wp-content/uploads/2023/12/Eyes-of-Wakanda.jpg" alt=""  className="object-cover w-full " style={{height:"630px"}}/> */}
+    <img src={movies.posterURL} alt={movies.title} className="  "style={{height:"75vh" ,width:"200vh"}}  />}
+       {/* <img src="https://fictionhorizon.com/wp-content/uploads/2023/12/Eyes-of-Wakanda.jpg" alt=""  className="object-cover w-full " style={{height:"630px"}}/> */}
 
     </div> 
 
 
-    <div className='container relative bg-gradient-to-l z-10 x-10 pt-48 pl-40 pr-102'>
+    <div className='container relative bg-gradient-to-l z-10 x-10 pt-48 pl-40 pr-'>
       {/* Add Image */}
-      <img src="https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/635/1410635-t-847283699e19" alt="OverlayImage" className="mt-4 mr-24" />
+     <div >
+
+     {movies&&
+       <h1 className='text-white     font-black' style={{fontSize:"74px"}} >{movies.title}</h1>
+      }
+      </div>
+
+     
+      {/* <img src="https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/635/1410635-t-847283699e19" alt="OverlayImage" className="mt-4 mr-24" /> */}
       <img src="https://img10.hotstar.com/image/upload/f_auto,h_48/discovery/PP/usp_callouts/newly-added/web/eng/version-1/newlyadded_web_eng.png" alt="" className='w-28' />
 
       <div className="text-white font-medium text-lg mobiles:text-xs pt-2">

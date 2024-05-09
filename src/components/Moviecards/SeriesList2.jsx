@@ -15,9 +15,12 @@ function SeriesList () {
       const movies = await resp.json();
 
       // Extract image urls 
-      const urls = movies.map((movie) => movie.posterURL);
+    //   const urls = movies.map((movie,id) => 
+    //     movie.posterURL,
+    // id);
 
-      setImageUrls(urls);
+      setImageUrls(movies);
+
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -42,15 +45,18 @@ function SeriesList () {
       <div className="seriescontainer flex flex-row ">
         <h1 className="Serieshead">Latest Release</h1>
         <button className="left-button" onClick={handleLeftScroll}> <MdKeyboardArrowLeft style = {{ fontSize:"30px"}}/></button>
+
         {imageUrls.slice(scrollPosition, scrollPosition + 9).map((url, index) => (
           <div
-            key={index + scrollPosition} className="seriescard"
+            // key={index + scrollPosition} 
+            key={url.title}
+            className="seriescard"
             onMouseEnter={() => setHoveredIndex(index + scrollPosition)}
             onMouseLeave={() => setHoveredIndex(null)} >
-            <img src={url} alt={`Movie Poster ${index}`} className="seriesimg" height="200px" width="150px" />
+            <img src={url.posterURL} alt={`Movie Poster ${index}`} className="seriesimg" height="200px" width="150px" />
 
             {hoveredIndex === index + scrollPosition && (
-              <Link to={`/details/${index+1}`}>
+              <Link to={`/details/${url.id}`}>
               <div className="seriesoverlay">
                 <div style={{ display: "flex" }}>
                     <button className="seriesbutton">
