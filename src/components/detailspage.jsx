@@ -31,7 +31,7 @@ function DetailView() {
 
   useEffect(() => {
     getData();
-  }, [id]);
+  }, [id],[getData]);
 
   return (
 
