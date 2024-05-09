@@ -1,4 +1,7 @@
 import { MdKeyboardArrowRight } from "react-icons/md";
+// import { IoStarOutline } from "react-icons/io5";
+import { FaRegHeart } from "react-icons/fa";
+
 import React from 'react'
 import user from '../../images/user.svg'
 import search from '../../images/search.svg'
@@ -67,8 +70,18 @@ const Navbar = () => {
         {/* Categories */}
         <div className='nav-ite text-white flex relative hover:fill-white hover:scale-110 '>
           <img src={category}  alt="Category Icon" />
-          <p className='absolute opacity-0  left-11'>Categories</p>
+          <p className='absolute opacity-0 hover:opacity-100 left-11'>Categories</p>
         </div>
+
+        {/* Favorites */}
+        {/* <Link to={"/fav"}> */}
+        <div className='nav-ite text-white flex relative hover:fill-white hover:scale-110 '>
+          {/* <img src={category}  alt="Category Icon" /> */}
+          {/* <IoStarOutline className="" /> */}
+          <FaRegHeart style={{fontWeight:"10%"}}/>
+          <p className='absolute opacity-0  left-11'>Favorites</p>
+        </div>
+        {/* </Link> */}
       </div>
     </div>
   

@@ -13,11 +13,11 @@ function DetailView() {
   const { id } = useParams();
   const [movies, setMovie] = useState(null); 
 
+  useEffect(() => {
   const getData = async () => {
     try {
       const resp = await fetch(`https://api.sampleapis.com/movies/drama/${id}`);
       const data = await resp.json();
-
       
       setMovie(data);
     } catch (error) {
@@ -25,9 +25,8 @@ function DetailView() {
     }
   };
 
-  useEffect(() => {
     getData();
-  }, []);
+  }, [id]);
 
   return (
 
