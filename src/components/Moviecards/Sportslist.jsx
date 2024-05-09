@@ -1,4 +1,5 @@
 import { MdKeyboardArrowRight,MdKeyboardArrowLeft } from "react-icons/md";
+// import { IoStarOutline } from "react-icons/io5";
 
 import React, { useState, useEffect } from "react";
 import "../style/sportslist.css";
@@ -12,7 +13,6 @@ function SeriesList () {
   const getData = async () => {
     try {
       const resp = await fetch("https://api.sampleapis.com/movies/family");
-
       // const resp = await fetch("https://api.sampleapis.com/cartoons/cartoons2D");
 
       const movies = await resp.json();
@@ -52,8 +52,12 @@ function SeriesList () {
           {imageUrls.slice(scrollPosition, scrollPosition + 6).map((url, index) => (
           <div
             key={index + scrollPosition} className="sportscard"
-            onMouseEnter={() => setHoveredIndex(index + scrollPosition)}
+            onMous8eEnter={() => setHoveredIndex(index + scrollPosition)}
             onMouseLeave={() => setHoveredIndex(null)} >
+             {/* <div className="icon-overlay">
+              <IoStarOutline className="star-icon" />
+            </div> */}
+              {/* image */}
             <img src={url} alt={`Movie Poster ${index}`} className="sportsimg" height="200px" width="230px" />
 
             {hoveredIndex === index + scrollPosition && (

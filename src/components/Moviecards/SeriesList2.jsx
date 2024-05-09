@@ -1,4 +1,7 @@
 import { MdKeyboardArrowRight,MdKeyboardArrowLeft } from "react-icons/md";
+// import { IoStarOutline } from "react-icons/io5";
+import { FaStar } from "react-icons/fa";
+
 import React, { useState, useEffect } from "react";
 import "../style/SeriesList.css";
 import { Link } from "react-router-dom";
@@ -53,6 +56,24 @@ function SeriesList () {
             className="seriescard"
             onMouseEnter={() => setHoveredIndex(index + scrollPosition)}
             onMouseLeave={() => setHoveredIndex(null)} >
+            
+
+           {/* <button className="star-button"> <IoStarOutline className="star-icon" /> </button> */}
+           
+            {/* <div className="icon-overlay"> */}
+            {/* </div> */}
+
+             {/* {hoveredIndex === index + scrollPosition && (
+              <IoStarOutline className="star-icon" />
+            )} */}
+           {hoveredIndex === index + scrollPosition && (
+              <button className="star-button">
+               < FaStar className="star-icon" />
+               {/* <IoStarOutline className="star-icon" /> */}
+              </button>
+
+            )}
+
             <img src={url.posterURL} alt={`Movie Poster ${index}`} className="seriesimg" height="200px" width="150px" />
 
             {hoveredIndex === index + scrollPosition && (
@@ -78,7 +99,7 @@ function SeriesList () {
           </div>
         ))}
 
-        <button className="right-button  " onClick={handleRightScroll}><MdKeyboardArrowRight style={{fontSize:"30px"}}/></button>
+        <button className="right-button" onClick={handleRightScroll}><MdKeyboardArrowRight style={{fontSize:"30px"}}/></button>
       </div>
     </>
   );

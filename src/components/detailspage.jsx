@@ -18,7 +18,7 @@ function DetailView() {
     try {
       const resp = await fetch(`https://api.sampleapis.com/movies/drama/${id}`);
       const data = await resp.json();
-      
+
       setMovie(data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -46,10 +46,10 @@ function DetailView() {
 
       <div className='container relative bg-gradient-to-l z-10 x-10 pt-48 pl-40 pr-'>
         {/* Add Image */}
-        <div className=' bg-opacity-45 bg-black max-w-fit h-32 '>
+        <div className=' bg-opacity-45 bg-black max-w-fit z-30 h-24 '>
 
           {movies &&
-            <h1 className='text-white font-black' style={{ fontSize: "74px" }} >{movies.title}</h1>
+            <h1 className='text-white font-black' style={{ fontSize: "70px" }} >{movies.title}</h1>
           }
         </div>
 
