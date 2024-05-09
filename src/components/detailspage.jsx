@@ -8,9 +8,9 @@ import { useParams } from 'react-router-dom';
 
 function DetailView() {
   // const [movies,setImageUrls] = useState(null);
-  // const [id] = useParams();
-  const { id } = useParams();
+  // const [id] = useParams()
 
+  const { id } = useParams();
   const [movies, setMovie] = useState(null); 
 
   const getData = async () => {
@@ -18,10 +18,6 @@ function DetailView() {
       const resp = await fetch(`https://api.sampleapis.com/movies/drama/${id}`);
       const data = await resp.json();
 
-
-      // setMovie(movies[0]);
-      // Extract image urls 
-      // console.log(urls);
       
       setMovie(data);
     } catch (error) {
@@ -31,7 +27,7 @@ function DetailView() {
 
   useEffect(() => {
     getData();
-  }, [id,getData]);
+  }, []);
 
   return (
 
