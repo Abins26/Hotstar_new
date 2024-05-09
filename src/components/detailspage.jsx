@@ -47,7 +47,7 @@ function DetailView() {
 
       <div className='container relative bg-gradient-to-l z-10 x-10 pt-48 pl-40 pr-'>
         {/* Add Image */}
-        <div >
+        <div className=' bg-opacity-45 bg-black max-w-fit h-32 '>
 
           {movies &&
             <h1 className='text-white font-black' style={{ fontSize: "74px" }} >{movies.title}</h1>
