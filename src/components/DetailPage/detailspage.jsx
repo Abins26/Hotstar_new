@@ -2,8 +2,8 @@
 // import VIDEO from '../video/premalu_2.mp4';
 
 import {React,useState,useEffect} from 'react';
-import Navbar from './Navbar/Navbar';
-import SeriesList from "./Moviecards/SeriesList2";
+import Navbar from '../Navbar/Navbar';
+import SeriesList from "../Moviecards/SeriesList2";
 import { useParams } from 'react-router-dom';
 
 function DetailView() {
@@ -38,7 +38,7 @@ function DetailView() {
 
       <div className=" absolute ">
         {movies &&
-          <img src={movies.posterURL} alt={movies.title} className="  " style={{ height: "75vh", width: "200vh" }} />}
+          <img src={movies.posterURL} alt={movies.title} className=" " style={{ height: "75vh", width: "200vh" }} />}
         {/* <img src="https://fictionhorizon.com/wp-content/uploads/2023/12/Eyes-of-Wakanda.jpg" alt=""  className="object-cover w-full " style={{height:"630px"}}/> */}
 
       </div>

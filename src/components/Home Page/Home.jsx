@@ -5,15 +5,19 @@ import SportsList from "../Moviecards/Sportslist";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../Footer/footer";
 import Languages from "../MovieCategories/Languages";
+import { StarProvider } from "../FavoriteContext/FavoriteContext";
+import { StarContext } from "../FavoriteContext/FavoriteContext";
 
 const Home = () => {
   return(
     <>
+    {/* <StarProvider> */}
+    {/* <StarContext.Provider> */}
+
       <div>
         <Navbar />
         <VideoBackground />
-        <div className="relative h-full w-fit bg-black" 
-         >
+        <div className="relative h-full w-fit bg-black" >
            {/* style={{backgroundColor:"#050714"}} */}
 
         <SeriesList />
@@ -21,8 +25,10 @@ const Home = () => {
         <SportsList />
         <Languages/>
         <Footer />
-</div>
       </div>
+      </div>
+           {/* </StarContext.Provider> */}
+    {/* </StarProvider> */}
     </>
   )
 };

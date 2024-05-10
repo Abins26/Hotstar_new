@@ -1,16 +1,15 @@
 import { PiSpeakerSlashThin,PiSpeakerHighThin } from "react-icons/pi";
 import React,{useState} from 'react';
+
+
 import VIDEO from '../../video/premalu_2.mp4';
 import SetsFinite from '../Sliders';
 
 // import { FaPlay } from "react-icons/fa6";
 // import {Link} from "react-router-dom";
 
-
 // import SportsList from '../Moviecards/Sportslist';
 // import SeriesList from '../Moviecards/SeriesList2';
-
-// import MovieList from './MovieList';
 
 const VideoBackground = () => {
 
@@ -19,6 +18,8 @@ const VideoBackground = () => {
   const toggleMute = () => {
     setMuted(!muted);
   };
+
+  
 
   return (
     
@@ -29,7 +30,7 @@ const VideoBackground = () => {
       src={VIDEO} type="Video/mp4"> </video>
       
       
-      <div className='container relative  z- x-10 pt-48 pl-40 pr-102 w-screen  '>
+      <div className=' relative  z- x-10 pt-48 pl-40 pr-10 w-screen  '>
       {/* bg-gradient-to-t from-black to-transparent */}
         {/* Add Image */}
         <img src="https://img10.hotstar.com/image/upload/f_auto,h_148/sources/r1/cms/prod/8256/1712839838256-t" alt="OverlayImage" className="mt-4 mr-24" />
@@ -75,8 +76,6 @@ const VideoBackground = () => {
       
       {/* <SeriesList/> */}
       {/* <SportsList/> */}
-
-
       {/* <MovieList/> */}
 
     </div>

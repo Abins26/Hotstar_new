@@ -2,9 +2,9 @@ import './App.css';
 // import Navbar from '../src/components/Navbar/Navbar';
 import 'tailwindcss/tailwind.css';
 // import VideoBackground from './components/VideoBackground';
-import Home from './components/Home Page/Home'
+import Home from './components/Home Page/Home';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import DetailView from "./components/detailspage";
+import DetailView from "../src/components/DetailPage/detailspage";
 function App() {
   return (
     <>

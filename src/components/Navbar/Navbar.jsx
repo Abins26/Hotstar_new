@@ -94,6 +94,10 @@
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
 import React, { useState } from 'react';
+// import { useContext } from 'react';
+// import StarContext from '../CountContext/StarContext'; // Import the context
+
+
 import user from '../../images/user.svg';
 import search from '../../images/search.svg';
 import home from '../../images/home.svg';
@@ -103,17 +107,22 @@ import sports from '../../images/sports.svg';
 import category from '../../images/category.svg';
 import '../Navbar/Navbar.css';
 import { Link } from 'react-router-dom';
+import Modal from "../Modal/Modal"
+
 
 const Navbar = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const { favorites } = useStarContext();
+  // const { toggleFavorite } = useContext(StarContext); // Access the context
 
   const openModal = () => {
-    setShowModal(true);
+    setIsModalOpen(true);
+  };
+  
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
-  const closeModal = () => {
-    setShowModal(false);
-  };
 
   return (
     <>
@@ -130,6 +139,14 @@ const Navbar = () => {
 
 
         <div className='nav-items  pb-18  bold flex flex-col justify-center  items-center gap-10  '>
+          {/* Favorites */}
+          <div className='nav-ite text-white flex relative hover:fill-white hover:scale-110 '>
+            <FaRegHeart style={{ fontWeight: "10%" }} onClick={openModal} />
+            <p className='absolute opacity-0  left-11' onClick={openModal}>Favorites
+            {/* <span>{starCount}</span> Displays the count */}
+            </p>
+          </div>
+
           {/* User */}
           <div className='nav-ite text-white flex  relative   hover:fill-white hover:scale-110 '>
             <img src={user} alt="User Icon" />
@@ -174,41 +191,13 @@ const Navbar = () => {
             <p className='absolute opacity-0 hover:opacity-100 left-11'>Categories</p>
           </div>
 
-          {/* Favorites */}
-          <div className='nav-ite text-white flex relative hover:fill-white hover:scale-110 '>
-            <FaRegHeart style={{ fontWeight: "10%" }} onClick={openModal} />
-            <p className='absolute opacity-0  left-11' onClick={openModal}>Favorites</p>
-          </div>
+           {/* Modal */}
+          {/* <Modal isOpen={isModalOpen} closeModal={closeModal} /> */}
         </div>
       </div>
 
-      {/* Modal */}
-      {/* {showModal && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={closeModal}>&times;</span>
-            <h2>Modal Title</h2>
-            <p>This is the modal content.</p>
-          </div>
-        </div>
-      )} */}
-      {showModal && (
-  <div className="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 flex justify-center items-center">
-    <div className="relative bg-white rounded-lg p-8">
-      <button
-        className="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
-        onClick={closeModal}
-      >
-        &times;
-      </button>
-      <h2 className="text-2xl font-bold mb-4">Modal Title</h2>
-      <p className="text-lg text-gray-700">This is the modal content.</p>
-    </div>
-  </div>
-)}
-
     </>
-  )
+);
 }
 
 export default Navbar;
