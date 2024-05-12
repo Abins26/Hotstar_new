@@ -5,16 +5,16 @@ import SportsList from "../Moviecards/Sportslist";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../Footer/footer";
 import Languages from "../MovieCategories/Languages";
-import { StarProvider } from "../FavoriteContext/FavoriteContext";
-import { StarContext } from "../FavoriteContext/FavoriteContext";
+import { FavoriteProvider } from "../FavoriteContext/FavoriteContext";
+// import { StarContext } from "../FavoriteContext/FavoriteContext";
 
 const Home = () => {
   return(
     <>
-    {/* <StarProvider> */}
     {/* <StarContext.Provider> */}
 
       <div>
+    {/* <FavoriteProvider> */}
         <Navbar />
         <VideoBackground />
         <div className="relative h-full w-fit bg-black" >
@@ -26,9 +26,9 @@ const Home = () => {
         <Languages/>
         <Footer />
       </div>
+    {/* </FavoriteProvider> */}
       </div>
-           {/* </StarContext.Provider> */}
-    {/* </StarProvider> */}
+    {/* </StarContext.Provider> */}
     </>
   )
 };

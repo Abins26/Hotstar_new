@@ -40,6 +40,38 @@
 // export { StarProvider, StarContext };
 
 //New test
+// import React, { useState, createContext, useEffect } from "react";
+
+// const FavoriteContext = createContext();
+
+// export const FavoriteProvider = ({ children }) => {
+//   const [favorites, setFavorites] = useState([]);
+
+//   const toggleFavorite = (movie) => {
+//     const isFavorite = favorites.some((fav) => fav.id === movie.id);
+//     if (isFavorite) {
+//       setFavorites(favorites.filter((fav) => fav.id !== movie.id));
+//     } else {
+//       setFavorites([...favorites, movie]);
+//     }
+//   };
+
+// const numberOfFavoriteMovies=favorites.length;
+//   // useEffect(() => {
+//   // }, [favorites]);
+// console.log(favorites,numberOfFavoriteMovies);
+
+//   return (
+//     <FavoriteContext.Provider value={{ favorites, toggleFavorite,numberOfFavoriteMovies }}>
+//       {children}
+//     </FavoriteContext.Provider>
+//   );
+// };
+
+// export default FavoriteContext;
+
+
+// 
 import React, { useState, createContext, useEffect } from "react";
 
 const FavoriteContext = createContext();
@@ -56,15 +88,20 @@ export const FavoriteProvider = ({ children }) => {
     }
   };
 
+  // Update the number of favorite movies whenever favorites list changes
+  const [numberOfFavoriteMovies, setNumberOfFavoriteMovies] = useState(0);
 
-  // useEffect(() => {
-  // }, [favorites]);
+  useEffect(() => {
+    setNumberOfFavoriteMovies(favorites.length);
+  }, [favorites]);
 
   return (
-    <FavoriteContext.Provider value={{ favorites, toggleFavorite }}>
+    <FavoriteContext.Provider value={{ favorites, toggleFavorite, numberOfFavoriteMovies }}>
       {children}
     </FavoriteContext.Provider>
   );
 };
 
 export default FavoriteContext;
+
+// 

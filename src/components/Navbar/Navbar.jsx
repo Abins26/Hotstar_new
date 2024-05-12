@@ -93,7 +93,7 @@
 
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 // import { useContext } from 'react';
 // import StarContext from '../CountContext/StarContext'; // Import the context
 
@@ -107,10 +107,13 @@ import sports from '../../images/sports.svg';
 import category from '../../images/category.svg';
 import '../Navbar/Navbar.css';
 import { Link } from 'react-router-dom';
+import FavoriteContext from "../FavoriteContext/FavoriteContext";
 import Modal from "../Modal/Modal"
 
-
 const Navbar = () => {
+
+  const {numberOfFavoriteMovies}=useContext(FavoriteContext);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   // const { favorites } = useStarContext();
   // const { toggleFavorite } = useContext(StarContext); // Access the context
@@ -119,11 +122,12 @@ const Navbar = () => {
     setIsModalOpen(true);
   };
   
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  // const closeModal = () => {
+  //   setIsModalOpen(false);
+  // };
 
 
+  // console.log(numberOfFavoriteMovies );
   return (
     <>
       <div className='bg-transparent h-screen w-38 z-30 pt-4 bg-gradient-to-r from-black to-transparent fixed'>
@@ -141,6 +145,7 @@ const Navbar = () => {
         <div className='nav-items  pb-18  bold flex flex-col justify-center  items-center gap-10  '>
           {/* Favorites */}
           <div className='nav-ite text-white flex relative hover:fill-white hover:scale-110 '>
+            {numberOfFavoriteMovies}
             <FaRegHeart style={{ fontWeight: "10%" }} onClick={openModal} />
             <p className='absolute opacity-0  left-11' onClick={openModal}>Favorites
             {/* <span>{starCount}</span> Displays the count */}

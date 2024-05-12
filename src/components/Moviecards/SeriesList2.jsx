@@ -232,21 +232,174 @@
 
 
 
-// Import necessary modules
-// SeriesList.js
+// // Import necessary modules
+// // SeriesList.js
+// import React, { useState, useEffect, useContext } from "react";
+// import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
+// import { FaStar } from "react-icons/fa";
+// import { Link } from "react-router-dom";
+// import "../style/SeriesList.css";
+// import FavoriteContext from "../FavoriteContext/FavoriteContext";
+
+// function SeriesList() {
+//   // State variables
+//   const [imageUrls, setImageUrls] = useState([]);
+//   const [hoveredIndex, setHoveredIndex] = useState(null);
+//   const [scrollPosition, setScrollPosition] = useState(0);
+//   const [modalMovies, setModalMovies] = useState([]);
+
+  
+//   // Fetch data function
+//   const getData = async () => {
+//     try {
+//       const resp = await fetch("https://api.sampleapis.com/movies/drama");
+//       const movies = await resp.json();
+//       setImageUrls(movies);
+//     } catch (error) {
+//       console.error("Error fetching data:", error);
+//     }
+//   };
+
+//   useEffect(() => {
+//     getData();
+//   }, []);
+
+//   // Left scroll handler
+//   const handleLeftScroll = () => {
+//     setScrollPosition((prevPosition) => Math.max(0, prevPosition - 7));
+//   };
+
+//   // Right scroll handler
+//   const handleRightScroll = () => {
+//     setScrollPosition((prevPosition) => Math.min(prevPosition + 6, imageUrls.length - 7)
+//     );
+//   };
+
+//   // Toggle favorite handler
+//   const toggleFavorite = (index) => {
+//     const movie = imageUrls[index];
+//     const isModalMovie = modalMovies.some((modalMovie) => modalMovie.id === movie.id);
+//     if (isModalMovie) {
+//       setModalMovies(modalMovies.filter((modalMovie) => modalMovie.id !== movie.id));
+//     } else {
+//       setModalMovies([...modalMovies, movie]);
+//     }
+//   };
+
+//   return (
+//     <FavoriteContext.Provider value={{ toggleFavorite }}>
+//       <>
+//         <div className="seriescontainer flex flex-row">
+//           <h1 className="Serieshead">Latest Release</h1>
+//           <button className="left-button" onClick={handleLeftScroll}>
+//             <MdKeyboardArrowLeft style={{ fontSize: "30px" }} />
+//           </button>
+
+//           {imageUrls.slice(scrollPosition, scrollPosition + 9).map((url, index) => (
+//             <div
+//               key={url.title}
+//               className="seriescard"
+//               onMouseEnter={() => setHoveredIndex(index + scrollPosition)}
+//               onMouseLeave={() => setHoveredIndex(null)}
+//             >
+//               {hoveredIndex === index + scrollPosition && (
+//                 <button
+//                   className="star-button"
+//                   onClick={() => toggleFavorite(index + scrollPosition)}
+//                 >
+//                   <FaStar
+//                     className="star-icon"
+//                     style={{
+//                       color: modalMovies.some((modalMovie) => modalMovie.id === url.id)
+//                         ? "yellow"
+//                         : "white",
+//                     }}
+//                   />
+//                 </button>
+//               )}
+
+//               <img
+//                 src={url.posterURL}
+//                 alt={`Movie Poster ${index}`}
+//                 className="seriesimg"
+//                 height="200px"
+//                 width="150px"
+//               />
+
+//               {hoveredIndex === index + scrollPosition && (
+//                 <Link to={`/details/${url.id}`}>
+//                   <div className="seriesoverlay">
+//                     <div style={{ display: "flex" }}>
+//                       <button className="seriesbutton">
+//                         <h3 style={{ fontWeight: "bold", fontSize: 8 }}>Watch Now</h3>
+//                       </button>
+//                       <button className="small-button">+</button>
+//                     </div>
+
+//                     <p className="small-text">2024-2h.12m-English-U/A16+</p>
+
+//                     <p className="seriestext">
+//                       The plot revolves around Sachin, a student who works in a food joint in Hyderabad, and Reenu, an IT employee who recently moved to the city, as they fall in love and face various challenges in their relationship.
+//                     </p>
+//                   </div>
+//                 </Link>
+//               )}
+//             </div>
+//           ))}
+
+//           <button className="right-button" onClick={handleRightScroll}>
+//             <MdKeyboardArrowRight style={{ fontSize: "30px" }} />
+//           </button>
+//         </div>
+//         {modalMovies.length > 0 && <Modal movies={modalMovies} onClose={() => setModalMovies([])} />}
+//       </>
+//     </FavoriteContext.Provider>
+//   );
+// }
+
+// // Modal component
+// function Modal({ movies, onClose }) {
+//   return (
+//     <div className="modal">
+//       <div className="modal-content ">
+//         <div className="h-9 w-full right-0 bg-slate-300  mb-3">
+//         <span className="close left-24 bg-" onClick={onClose}>&times;</span>
+//         </div>
+// <div className="container">
+//         {movies.map((movie) => (
+//           <div className="movie-images" key={movie.id}>
+//             <h2 className="">{movie.title}</h2>
+            
+//             <img src={movie.posterURL} alt="" />
+//             {/* Add more details here */}
+//           </div>
+
+//         ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default SeriesList;
+
+////test 4
 import React, { useState, useEffect, useContext } from "react";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "../style/SeriesList.css";
 import FavoriteContext from "../FavoriteContext/FavoriteContext";
-
+import Modal from "../Modal/Modal";
 function SeriesList() {
   // State variables
   const [imageUrls, setImageUrls] = useState([]);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [modalMovies, setModalMovies] = useState([]);
+
+  // Context
+  const { favorites, toggleFavorite } = useContext(FavoriteContext);
+  const [showModal, setShowModal] = useState(false); // State to control modal visibility
 
   // Fetch data function
   const getData = async () => {
@@ -270,115 +423,96 @@ function SeriesList() {
 
   // Right scroll handler
   const handleRightScroll = () => {
-    setScrollPosition((prevPosition) =>
-      Math.min(prevPosition + 6, imageUrls.length - 7)
+    setScrollPosition((prevPosition) => Math.min(prevPosition + 6, imageUrls.length - 7)
     );
   };
 
-  // Toggle favorite handler
-  const toggleFavorite = (index) => {
-    const movie = imageUrls[index];
-    const isModalMovie = modalMovies.some((modalMovie) => modalMovie.id === movie.id);
-    if (isModalMovie) {
-      setModalMovies(modalMovies.filter((modalMovie) => modalMovie.id !== movie.id));
-    } else {
-      setModalMovies([...modalMovies, movie]);
-    }
+   // Toggle modal visibility
+  //  const toggleModal = () => {
+  //   setShowModal (true);
+  // };
+  const toggleModal = () => {
+    setShowModal(prevShowModal => !prevShowModal);
   };
-
+  
   return (
-    <FavoriteContext.Provider value={{ toggleFavorite }}>
-      <>
-        <div className="seriescontainer flex flex-row">
-          <h1 className="Serieshead">Latest Release</h1>
-          <button className="left-button" onClick={handleLeftScroll}>
-            <MdKeyboardArrowLeft style={{ fontSize: "30px" }} />
-          </button>
+    <>
+      <div className="seriescontainer flex flex-row">
+        <h1 className="Serieshead">Latest Release</h1>
+        <button className="left-button" onClick={handleLeftScroll}>
+          <MdKeyboardArrowLeft style={{ fontSize: "30px" }} />
+        </button>
 
-          {imageUrls.slice(scrollPosition, scrollPosition + 9).map((url, index) => (
-            <div
-              key={url.title}
-              className="seriescard"
-              onMouseEnter={() => setHoveredIndex(index + scrollPosition)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              {hoveredIndex === index + scrollPosition && (
-                <button
-                  className="star-button"
-                  onClick={() => toggleFavorite(index + scrollPosition)}
-                >
-                  <FaStar
-                    className="star-icon"
-                    style={{
-                      color: modalMovies.some((modalMovie) => modalMovie.id === url.id)
-                        ? "yellow"
-                        : "white",
-                    }}
-                  />
-                </button>
-              )}
+        {imageUrls.slice(scrollPosition, scrollPosition + 9).map((url, index) => (
+          <div
+            key={url.title}
+            className="seriescard"
+            onMouseEnter={() => setHoveredIndex(index + scrollPosition)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            {hoveredIndex === index + scrollPosition && (
+              <button
+                className="star-button"
+              // Inside the star button click handler
+            onClick={() => {
+              toggleFavorite(url);
+              if (!favorites.some((fav) => fav.id === url.id)) {
+                setShowModal(true); // Show the modal only if the movie is added to favorites
+              }
+            }}
 
-              <img
-                src={url.posterURL}
-                alt={`Movie Poster ${index}`}
-                className="seriesimg"
-                height="200px"
-                width="150px"
-              />
+                // onClick={() => {toggleFavorite(url);
+                // toggleModal();
+                // }}
+              >
+                <FaStar
+                  className="star-icon"
+                  style={{
+                    color: favorites.some((fav) => fav.id === url.id)
+                      ? "yellow"
+                      : "white",
+                  }}
+                />
+              </button>
+            )}
 
-              {hoveredIndex === index + scrollPosition && (
-                <Link to={`/details/${url.id}`}>
-                  <div className="seriesoverlay">
-                    <div style={{ display: "flex" }}>
-                      <button className="seriesbutton">
-                        <h3 style={{ fontWeight: "bold", fontSize: 8 }}>Watch Now</h3>
-                      </button>
-                      <button className="small-button">+</button>
-                    </div>
+            <img
+              src={url.posterURL}
+              alt={`Movie Poster ${index}`}
+              className="seriesimg"
+              height="200px"
+              width="150px"
+            />
 
-                    <p className="small-text">2024-2h.12m-English-U/A16+</p>
-
-                    <p className="seriestext">
-                      The plot revolves around Sachin, a student who works in a food joint in Hyderabad, and Reenu, an IT employee who recently moved to the city, as they fall in love and face various challenges in their relationship.
-                    </p>
+            {hoveredIndex === index + scrollPosition && (
+              <Link to={`/details/${url.id}`}>
+                <div className="seriesoverlay">
+                  <div style={{ display: "flex" }}>
+                    <button className="seriesbutton">
+                      <h3 style={{ fontWeight: "bold", fontSize: 8 }}>Watch Now</h3>
+                    </button>
+                    <button className="small-button">+</button>
                   </div>
-                </Link>
-              )}
-            </div>
-          ))}
 
-          <button className="right-button" onClick={handleRightScroll}>
-            <MdKeyboardArrowRight style={{ fontSize: "30px" }} />
-          </button>
-        </div>
-        {modalMovies.length > 0 && <Modal movies={modalMovies} onClose={() => setModalMovies([])} />}
-      </>
-    </FavoriteContext.Provider>
-  );
-}
+                  <p className="small-text">2024-2h.12m-English-U/A16+</p>
 
-// Modal component
-function Modal({ movies, onClose }) {
-  return (
-    <div className="modal">
-      <div className="modal-content ">
-        <div className="h-9 w-full right-0 bg-slate-300  mb-3">
-        <span className="close left-24 bg-" onClick={onClose}>&times;</span>
-        </div>
-<div className="container">
-        {movies.map((movie) => (
-          <div className="movie-images" key={movie.id}>
-            <h2 className="">{movie.title}</h2>
-            
-            <img src={movie.posterURL} alt="" />
-            {/* Add more details here */}
+                  <p className="seriestext">
+                    The plot revolves around Sachin, a student who works in a food joint in Hyderabad, and Reenu, an IT employee who recently moved to the city, as they fall in love and face various challenges in their relationship.
+                  </p>
+                </div>
+              </Link>
+            )}
           </div>
-
         ))}
-        </div>
+
+        <button className="right-button" onClick={handleRightScroll}>
+          <MdKeyboardArrowRight style={{ fontSize: "30px" }} />
+        </button>
       </div>
-    </div>
+      {showModal && <Modal onClose={toggleModal} />} {/* Render the modal conditionally */}
+    </>
   );
 }
 
 export default SeriesList;
+

@@ -1,0 +1,54 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    right: 0;
+     bottom: 0;
+    width: 100%;
+    height: 40%;
+    background-color: transparent; 
+    /* Semi-transparent black background */
+    display: flex ; 
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+  }
+  
+  .modal-content {
+    top: 5%;
+    background-color: rgb(22, 19, 19);
+    padding: 20px;
+    border-radius: 5px;
+    width: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    width: 80%;
+  }
+  
+  .close {
+    /* position: absolute; */
+    /* top: ; */
+    padding-left: 20px;
+    /* right: 0px; */
+    left: 0;
+    cursor: pointer;
+    font-size: 30px;
+    color: #333;
+  }
+  
+  .close:hover {
+    color: rgb(255, 60, 11);
+  }
+  .movie-images {
+  
+    gap: 2px;
+    background-color: rgb(190, 11, 11);
+  }
+  .movie-images img{
+  width: 150px;
+  height: 200px;
+  }
+  
+  .container{
+    display: flex ; 
+    flex-direction: row; 
+  }
