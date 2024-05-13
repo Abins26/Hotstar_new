@@ -19,8 +19,6 @@ const VideoBackground = () => {
     setMuted(!muted);
   };
 
-  
-
   return (
     
     <div className="relative  "  >
@@ -28,7 +26,6 @@ const VideoBackground = () => {
 
        <video className="fixed  inset-0 top-0 left-0 z-0 w-full h-screen object-cover" autoPlay loop muted={muted} 
       src={VIDEO} type="Video/mp4"> </video>
-      
       
       <div className=' relative  z- x-10 pt-48 pl-40 pr-10 w-full bg-gradient-to-t from-black to-transparent '>
         {/* Add Image */}
@@ -41,7 +38,7 @@ const VideoBackground = () => {
          3 Languages <span className='text-gray-400 text-xm'> &#8226; </span>
         <span className='rounded-md w-auto bg-gray-400 bg-opacity-50 py-1 px-2'>U/A 13+</span> </div>
         
-        <p className="text-slate-300  xl:ahidden lg:w-1/5 md:w-1/4 sm:w-1/3 mt-3 pb-2">
+        <p className="text-slate-300  xl:hidden lg:block md:block sm:block xl:w-1/6 lg:w-1/5 md:w-1/4 sm:w-1/3 mt-3 pb-2">
         The plot revolves around Sachin, a student who works in a food joint,
         and Reenu, an IT employee who recently moved to the city, 
         as they fall in love and face various challenges in their relationship.</p>
@@ -55,11 +52,13 @@ const VideoBackground = () => {
         <PiSpeakerHighThin onClick={toggleMute} 
         className="absolute  right-10 text-white z-10 cursor-pointer" style={{ fontSize: '24px' }} />
       )}
+
        <div className='text-white font-medium' > Romance <span className='text-gray-400 '>|</span> Comedy <span className='text-gray-400 '>|</span> Bromance <span className='text-gray-400 '>|</span> Love Triangle
        </div>
 
        <div className=' w-auto flex justify-between bg-opacity-30'>
-        <div>
+       <div>
+
        <button className=" text-white text-center justify-center font-bold mt-1 h-12 w-60 py-2 px-4   rounded-md bg-opacity-30 bg-gray-100 hover:bg-opacity-50"> 
        <span className='text-stone-50 text-center font-black text-xl'  >&#8227; </span>
        {/* <FaPlay/> */}
@@ -142,3 +141,4 @@ export default VideoBackground;
 // };
 
 // export default VideoBackground;
+

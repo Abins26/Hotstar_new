@@ -37,7 +37,7 @@ function DetailView() {
       {/* <video className="fixed   top-0 left-0 z-0 w-full h-screen object-cover"  loop muted
       src={VIDEO} type="Video/mp4"> </video> */}
 
-      <div className=" absolute ">
+      <div className=" absolute bg-gradient-to-t from-black to-transparent">
         { movies && <img src = {movies.posterURL}  alt = {movies.title} className=" " style={{ height: "75vh", width: "200vh" }} /> } 
         
         {/* {/* <img src="https://fictionhorizon.com/wp-content/uploads/2023/12/Eyes-of-Wakanda.jpg" alt=""  className="object-cover w-full " style={{height:"630px"}}/> */}

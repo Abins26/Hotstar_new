@@ -5,7 +5,7 @@ import SportsList from "../Moviecards/Sportslist";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../Footer/footer";
 import Languages from "../MovieCategories/Languages";
-// import Studio from "../Studio/Studio";
+import Studio from "../Studio/Studio";
 // import { FavoriteProvider } from "../FavoriteContext/FavoriteContext";
 // import { StarContext } from "../FavoriteContext/FavoriteContext";
 
@@ -25,7 +25,7 @@ const Home = () => {
 
         <SportsList />
         <Languages/>
-        {/* <Studio/> */}
+        <Studio/>
         <Footer />
       </div>
     {/* </FavoriteProvider> */}
