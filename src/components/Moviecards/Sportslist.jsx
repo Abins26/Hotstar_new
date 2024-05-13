@@ -16,15 +16,15 @@ function SeriesList () {
       // const resp = await fetch("https://api.sampleapis.com/cartoons/cartoons2D");
 
       const movies = await resp.json();
-
-      // Extract image urls
-      const urls = movies.map((movie) => movie.posterURL);
-
-      setImageUrls(urls);
+      setImageUrls(movies);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
+
+      // Extract image urls
+      
+  // const urls = movies.map((movie) => movie.posterURL);
 
   useEffect(() => {
     getData();
@@ -52,13 +52,13 @@ function SeriesList () {
           {imageUrls.slice(scrollPosition, scrollPosition + 6).map((url, index) => (
           <div
             key={index + scrollPosition} className="sportscard"
-            onMous8eEnter={() => setHoveredIndex(index + scrollPosition)}
+            onMouseEnter={() => setHoveredIndex(index + scrollPosition)}
             onMouseLeave={() => setHoveredIndex(null)} >
              {/* <div className="icon-overlay">
               <IoStarOutline className="star-icon" />
             </div> */}
               {/* image */}
-            <img src={url} alt={`Movie Poster ${index}`} className="sportsimg" height="200px" width="230px" />
+            <img src={url.posterURL} alt={`Movie Poster ${index}`} className="sportsimg" height="200px" width="230px" />
 
             {hoveredIndex === index + scrollPosition && (
               <div className="sportsoverlay">

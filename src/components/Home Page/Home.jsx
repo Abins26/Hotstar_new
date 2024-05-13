@@ -5,7 +5,7 @@ import SportsList from "../Moviecards/Sportslist";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../Footer/footer";
 import Languages from "../MovieCategories/Languages";
-import { FavoriteProvider } from "../FavoriteContext/FavoriteContext";
+// import { FavoriteProvider } from "../FavoriteContext/FavoriteContext";
 // import { StarContext } from "../FavoriteContext/FavoriteContext";
 
 const Home = () => {

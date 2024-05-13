@@ -392,6 +392,7 @@ import "../style/SeriesList.css";
 import FavoriteContext from "../FavoriteContext/FavoriteContext";
 import Modal from "../Modal/Modal";
 function SeriesList() {
+  
   // State variables
   const [imageUrls, setImageUrls] = useState([]);
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -427,14 +428,15 @@ function SeriesList() {
     );
   };
 
-   // Toggle modal visibility
-  //  const toggleModal = () => {
-  //   setShowModal (true);
-  // };
   const toggleModal = () => {
     setShowModal(prevShowModal => !prevShowModal);
   };
-  
+
+  // Toggle modal visibility
+  //  const toggleModal = () => {
+  //   setShowModal (true);
+  // };
+    
   return (
     <>
       <div className="seriescontainer flex flex-row">
@@ -451,8 +453,7 @@ function SeriesList() {
             onMouseLeave={() => setHoveredIndex(null)}
           >
             {hoveredIndex === index + scrollPosition && (
-              <button
-                className="star-button"
+              <button className="star-button"
               // Inside the star button click handler
             onClick={() => {
               toggleFavorite(url);
@@ -461,9 +462,6 @@ function SeriesList() {
               }
             }}
 
-                // onClick={() => {toggleFavorite(url);
-                // toggleModal();
-                // }}
               >
                 <FaStar
                   className="star-icon"
@@ -509,7 +507,7 @@ function SeriesList() {
           <MdKeyboardArrowRight style={{ fontSize: "30px" }} />
         </button>
       </div>
-      {showModal && <Modal onClose={toggleModal} />} {/* Render the modal conditionally */}
+      {showModal && <Modal onClose={toggleModal} />} {/* Render the modal */}
     </>
   );
 }

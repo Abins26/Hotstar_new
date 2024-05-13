@@ -4,12 +4,12 @@ import Slider from "react-slick";
 import { MdKeyboardArrowRight,MdKeyboardArrowLeft } from "react-icons/md";
 
 import {React,useState} from "react";
-import movieimage from "../images/movie_1001.webp"
-import movieimage2 from "../images/movie_1002.webp"
-import movieimage3 from "../images/movie_1003.webp"
-import movieimage4 from "../images/movie_1004.webp"
-import movieimage5 from "../images/movie_1006.webp"
-import movieimage6 from "../images/movie_1005.png"
+import movieimage from "../../images/movie_1001.webp"
+import movieimage2 from "../../images/movie_1002.webp"
+import movieimage3 from "../../images/movie_1003.webp"
+import movieimage4 from "../../images/movie_1004.webp"
+import movieimage5 from "../../images/movie_1006.webp"
+import movieimage6 from "../../images/movie_1005.png"
 
 function SetsFinite() {
 

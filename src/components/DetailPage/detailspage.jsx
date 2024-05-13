@@ -32,26 +32,25 @@ function DetailView() {
 
     <div className="relative  bg-#0f0f14 h-full w-full //"  >
       <Navbar />
-      {/* Change to image url  */}
+
+      {/* todo: Change to image url  */}
       {/* <video className="fixed   top-0 left-0 z-0 w-full h-screen object-cover"  loop muted
       src={VIDEO} type="Video/mp4"> </video> */}
 
-      {/* <div className=" absolute ">
-        {movies &&
-          <img src={movies.posterURL} alt={movies.title} className=" " style={{ height: "75vh", width: "200vh" }} />} */}
-        {/* <img src="https://fictionhorizon.com/wp-content/uploads/2023/12/Eyes-of-Wakanda.jpg" alt=""  className="object-cover w-full " style={{height:"630px"}}/> */}
+      <div className=" absolute ">
+        { movies && <img src = {movies.posterURL}  alt = {movies.title} className=" " style={{ height: "75vh", width: "200vh" }} /> } 
+        
+        {/* {/* <img src="https://fictionhorizon.com/wp-content/uploads/2023/12/Eyes-of-Wakanda.jpg" alt=""  className="object-cover w-full " style={{height:"630px"}}/> */}
 
-      {/* </div> */}
+      </div> 
 
 
-      <div className='container relative bg-gradient-to-l z-10 x-10 pt-48 pl-40 pr-'>
+      <div className=' relative bg-gradient-to-l z-10 x-10 pt-48 pl-40 pr-'>
         {/* Add Image */}
         <div className=' bg-opacity-45 bg-black max-w-fit z-30 h-24 '>
 
-          {movies &&
-            <h1 className='text-white font-black' style={{ fontSize: "70px" }} >{movies.title}</h1>
-          }
-        </div>
+          { movies && <h1 className='text-white font-black' style={{ fontSize: "70px" }} >{movies.title}</h1> }
+      </div>
 
 
         {/* <img src="https://img10.hotstar.com/image/upload/f_auto,h_156/sources/r1/cms/prod/635/1410635-t-847283699e19" alt="OverlayImage" className="mt-4 mr-24" /> */}

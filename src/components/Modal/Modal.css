@@ -27,21 +27,22 @@
   .close {
     /* position: absolute; */
     /* top: ; */
-    padding-left: 20px;
     /* right: 0px; */
+
+    padding-left: 20px;
     left: 0;
     cursor: pointer;
     font-size: 30px;
-    color: #333;
+    color: #d87f7f;
   }
   
   .close:hover {
     color: rgb(255, 60, 11);
   }
   .movie-images {
-  
-    gap: 2px;
-    background-color: rgb(190, 11, 11);
+ padding: 5px;
+    /* gap: 2px; */
+    background-color: rgb(255, 255, 255);
   }
   .movie-images img{
   width: 150px;

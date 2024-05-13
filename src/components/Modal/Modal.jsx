@@ -26,6 +26,8 @@
 import React, { useContext } from "react";
 import FavoriteContext from "../FavoriteContext/FavoriteContext";
 import "./Modal.css";
+import { Link } from "react-router-dom";
+
 
 
 function Modal({ onClose }) {
@@ -34,14 +36,16 @@ function Modal({ onClose }) {
   return (
     <div className="modal">
       <div className="modal-content">
-        <div className="h-9 w-full right-0 bg-slate-300  mb-3">
+        <div className="h-9 w-full right-0 bg-  mb-3">
           <span className="close left-24 bg-" onClick={onClose}>&times;</span>
         </div>
         <div className="container">
           {favorites.map((movie) => (
             <div className="movie-images" key={movie.id}>
+              <Link to={`/details/${movie.id}`}>
               <h2>{movie.title}</h2>
               <img src={movie.posterURL} alt="" />
+              </Link>
               {/* Add more details here */}
             </div>
           ))}
