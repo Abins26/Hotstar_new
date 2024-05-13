@@ -22,14 +22,14 @@
 .seriescard {
   overflow: hidden;
   width: 150px;
-  height: 200px;
+  height: 220px;
   background-color: black;
   border-radius: 4px;
   transition: transform 0.5s ease-in-out;
 }
 .seriescard:hover {
   transform: scale(1.8);
-  height: 250px;
+  height: 220px;
   .seriesimg {
     height: 120px;
     border-radius: 4px;

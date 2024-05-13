@@ -30,7 +30,7 @@ const VideoBackground = () => {
       src={VIDEO} type="Video/mp4"> </video>
       
       
-      <div className=' relative  z- x-10 pt-48 pl-40 pr-10 w-screen bg-gradient-to-t from-black to-transparent '>
+      <div className=' relative  z- x-10 pt-48 pl-40 pr-10 w-full bg-gradient-to-t from-black to-transparent '>
         {/* Add Image */}
         <img src="https://img10.hotstar.com/image/upload/f_auto,h_148/sources/r1/cms/prod/8256/1712839838256-t" alt="OverlayImage" className="mt-4 mr-24" />
         <img src="https://img10.hotstar.com/image/upload/f_auto,h_48/discovery/PP/usp_callouts/newly-added/web/eng/version-1/newlyadded_web_eng.png" alt="" className='w-28'/>
@@ -41,9 +41,9 @@ const VideoBackground = () => {
          3 Languages <span className='text-gray-400 text-xm'> &#8226; </span>
         <span className='rounded-md w-auto bg-gray-400 bg-opacity-50 py-1 px-2'>U/A 13+</span> </div>
         
-        <p className="text-slate-300 md: xl:w-1/2 mt-3 pb-2">
-        The plot revolves around Sachin, a student who works in a food joint in Hyderabad,<br />
-        and Reenu, an IT employee who recently moved to the city, <br />
+        <p className="text-slate-300  xl:ahidden lg:w-1/5 md:w-1/4 sm:w-1/3 mt-3 pb-2">
+        The plot revolves around Sachin, a student who works in a food joint,
+        and Reenu, an IT employee who recently moved to the city, 
         as they fall in love and face various challenges in their relationship.</p>
 
       {muted ? (

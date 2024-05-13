@@ -63,8 +63,8 @@ function DetailView() {
           <span className='rounded-md w-auto bg-gray-400 bg-opacity-50 py-1 px-2'>U/A 13+</span> </div>
 
         <p className="text-slate-200 w-1/3 mt-3 pb-2">
-          The plot revolves around Sachin, a student who works in a food joint in Hyderabad,
-          and Reenu, an IT employee who recently moved to the city,
+          The plot revolves around Sachin, a student who works in a food joint,
+          and Reenu an IT employee who recently moved to the city,
           as they fall in love and face various challenges in their relationship.</p>
         <div className='text-white font-medium' >
           Adventure <span className='text-gray-400 '>|</span> Acion <span className='text-gray-400 '>|</span> Bromance <span className='text-gray-400 '>|</span> Fantacy

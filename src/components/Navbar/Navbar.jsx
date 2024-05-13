@@ -125,8 +125,6 @@ const Navbar = () => {
   // const closeModal = () => {
   //   setIsModalOpen(false);
   // };
-
-
   // console.log(numberOfFavoriteMovies );
   return (
     <>
@@ -145,12 +143,11 @@ const Navbar = () => {
         <div className='nav-items  pb-18  bold flex flex-col justify-center  items-center gap-10  '>
           {/* Favorites */}
           <div className='nav-ite text-white flex relative hover:fill-white hover:scale-110 '>
-           <span className="bg-white rounded-full text-center w-6  text-black">
-            {numberOfFavoriteMovies}
-           </span>
             <FaRegHeart style={{ fontWeight: "10%" }} onClick={openModal} />
+           <span className="bg-white rounded-full text-center w-6  text-black">
+            {numberOfFavoriteMovies}    {/* dispalys fav movie count */}
+           </span>
             <p className='absolute opacity-0  left-11' onClick={openModal}>Favorites
-            {/* <span>{starCount}</span> Displays the count */}
             </p>
           </div>
 
@@ -199,7 +196,7 @@ const Navbar = () => {
           </div>
 
            {/* Modal */}
-{ isModalOpen && <Modal onClose={()=> setIsModalOpen(false)}/> }
+      { isModalOpen && <Modal onClose={()=> setIsModalOpen(false)}/> }
         </div>
       </div>
 

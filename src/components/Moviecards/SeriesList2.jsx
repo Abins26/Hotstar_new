@@ -495,8 +495,9 @@ function SeriesList() {
                   <p className="small-text">2024-2h.12m-English-U/A16+</p>
 
                   <p className="seriestext">
-                    The plot revolves around Sachin, a student who works in a food joint in Hyderabad, and Reenu, an IT employee who recently moved to the city, as they fall in love and face various challenges in their relationship.
-                  </p>
+                  Black Boys Look Blue by Tarell Alvin McCraney, 
+                  it tells the story of a young Black man coming 
+                  to grips with his attraction to other men. </p>
                 </div>
               </Link>
             )}

@@ -42,11 +42,12 @@ function Modal({ onClose }) {
         <div className="container">
           {favorites.map((movie) => (
             <div className="movie-images" key={movie.id}>
+              
               <Link to={`/details/${movie.id}`}>
               <h2>{movie.title}</h2>
               <img src={movie.posterURL} alt="" />
               </Link>
-              {/* Add more details here */}
+              {/* Add more details  */}
             </div>
           ))}
         </div>

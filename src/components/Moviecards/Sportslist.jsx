@@ -23,7 +23,6 @@ function SeriesList () {
   };
 
       // Extract image urls
-      
   // const urls = movies.map((movie) => movie.posterURL);
 
   useEffect(() => {
@@ -35,9 +34,7 @@ function SeriesList () {
   };
 
   const handleRightScroll = () => {
-    setScrollPosition((prevPosition) =>
-      Math.min(prevPosition + 5, imageUrls.length - 5)
-    );
+    setScrollPosition((prevPosition) => Math.min(prevPosition + 5, imageUrls.length - 5));
   };
 
   return (
@@ -73,9 +70,10 @@ function SeriesList () {
 
                 <p className="sportstext">
                 The plot revolves around Sachin,
-                a student who works in a food joint in Hyderabad,and Reenu, 
+                a student who works in a food joint,and Reenu 
                 an IT employee who recently moved to the city,
-                as they fall in love and face various challenges in their relationship.</p>
+                as they fall in love and face various challenges
+                 in their relationship.</p>
               </div>
             )}
           </div>

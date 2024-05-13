@@ -82,7 +82,7 @@ function Languages() {
 
     <>
     <div
-      className=" flex flex-col relative h-44 pl-44    bg-black rounded-md gap-2  "
+      className=" flex flex-col relative h-44 pl-40    bg-black rounded-md gap-2  "
       style={{ width: "1500px" }}
     >
       <Slider {...settings}>
