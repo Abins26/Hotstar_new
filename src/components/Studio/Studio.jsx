@@ -12,30 +12,26 @@ const cardsData = [
 function Studio() {
     console.log(cardsData);
   return (
-    <div>
-      <div>
-
-
-    <div className="flex flex-wrap pt-10 pl-40">
-      {cardsData.map((card, index) => (
-        <div key={index} className="w-1/5 p-2">
-          <div className="max-w-sm rounded overflow-hidden relative bg-black shadow-lg z-10">
-            <img className="w-full h-32   hover:bg-transparent" src={card.imageUrl} alt={card.title} />
+        <div>
             <div>
-            <video className="w- h- object-cover absolute inset-0" autoPlay loop muted>
-            <source src={card.videoUrl} type="video/mp4" />
-          </video>
+                <div className="flex flex-wrap pt-10 pl-40">
+                    {cardsData.map((card, index) => (
+                        <div key={index} className="w-1/5 p-2">
+                            <div className="max-w-sm rounded overflow-hidden relative bg-black shadow-lg z-10">
+                                <img className="w-full h-32   hover:bg-transparent" src={card.imageUrl} alt={card.title} />
+                                <div>
+                                    <video className="w- h- object-cover absolute inset-0" autoPlay loop muted>
+                                        <source src={card.videoUrl} type="video/mp4" />
+                                    </video>
+                                </div>
+
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
-
-          </div>
         </div>
-      ))}
-    </div>
-
-
-      </div>
-    </div>
-  )
+    )
 }
 
 export default Studio
