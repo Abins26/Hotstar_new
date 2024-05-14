@@ -13,23 +13,21 @@ const Home = () => {
   return(
     <>
     {/* <StarContext.Provider> */}
+    {/* <FavoriteProvider> */}
 
       <div>
-    {/* <FavoriteProvider> */}
         <Navbar />
         <VideoBackground />
         <div className="relative h-full w-fit bg-black" >
-           {/* style={{backgroundColor:"#050714"}} */}
-
         <SeriesList />
-
         <SportsList />
         <Languages/>
         <Studio/>
         <Footer />
       </div>
-    {/* </FavoriteProvider> */}
       </div>
+      
+    {/* </FavoriteProvider> */}
     {/* </StarContext.Provider> */}
     </>
   )

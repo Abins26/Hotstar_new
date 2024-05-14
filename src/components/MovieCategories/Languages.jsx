@@ -85,6 +85,7 @@ function Languages() {
       className=" flex flex-col relative h-44 pl-40    bg-black rounded-md gap-2  "
       style={{ width: "1500px" }}
     >
+      <h1 className="text-white font-normal text-xl">Popular Languages</h1>
       <Slider {...settings}>
         <div className="imgdiv">
           <img

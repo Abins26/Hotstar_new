@@ -148,12 +148,17 @@ right: 78px;
 
 .star-button {
   position: absolute;
-  top: 5px;
+  top: 4px;
+  right: 2px;
   left: 130px;
   z-index: 20;
-  background-color: black;
+  /* background-color: black; */
   border: none;
   cursor: pointer;
+  padding: 1px;
+  background-color: rgb(39, 49, 49);
+  border-radius: 32px;
+
 }
 
 .star-icon {
@@ -207,7 +212,7 @@ right: 78px;
   background-color: rgb(190, 11, 11);
 }
 .movie-images img{
-width: 150px;
+/* width: 150px; */
 height: 200px;
 }
 

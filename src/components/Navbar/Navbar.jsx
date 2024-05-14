@@ -87,17 +87,12 @@
   
 //   )
 // }
-
 // export default Navbar;
 
 
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
 import React, { useContext, useState } from 'react';
-// import { useContext } from 'react';
-// import StarContext from '../CountContext/StarContext'; // Import the context
-
-
 import user from '../../images/user.svg';
 import search from '../../images/search.svg';
 import home from '../../images/home.svg';
@@ -113,19 +108,14 @@ import Modal from "../Modal/Modal";
 const Navbar = () => {
 
   const {numberOfFavoriteMovies}=useContext(FavoriteContext);
-
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // const { favorites } = useStarContext();
-  // const { toggleFavorite } = useContext(StarContext); // Access the context
 
   const openModal = () => {
     setIsModalOpen(true);
   };
   
-  // const closeModal = () => {
-  //   setIsModalOpen(false);
-  // };
   // console.log(numberOfFavoriteMovies );
+
   return (
     <>
       <div className='bg-transparent h-screen w-38 z-30 pt-4 bg-gradient-to-r from-black to-transparent fixed'>

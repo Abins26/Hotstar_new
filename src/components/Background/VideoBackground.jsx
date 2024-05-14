@@ -1,7 +1,6 @@
 import { PiSpeakerSlashThin,PiSpeakerHighThin } from "react-icons/pi";
 import React,{useState} from 'react';
 
-
 import VIDEO from '../../video/premalu_2.mp4';
 import SetsFinite from '../Slider/Sliders';
 
